@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:cloudqucs='urn:import:org.cloudqucs.client'
+	xmlns:p1="urn:import:com.google.gwt.user.cellview.client">
+	<ui:style>
+		.panel {
+			background-color: ivory;
+		}
+		
+		.style1 {
+			text-align: center;
+		}
+		
+		.style2 {
+			text-align: center;
+			font-family: "MV Boli";
+			font-size: x-large;
+			color: #0066CC;
+		}
+		
+		.fullwidth {
+			width: 100%;
+		}
+	</ui:style>
+	<g:VerticalPanel width="100%">
+		<g:HorizontalPanel width="100%" spacing="5"
+			ui:field="hpHeader">
+			<g:Cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+				<g:Image altText="Logo" url="Logo.png" width="225" height="40"
+					ui:field="logoImage" />
+			</g:Cell>
+			<g:Cell verticalAlignment="ALIGN_MIDDLE" horizontalAlignment="ALIGN_CENTER">
+				<g:HTML>
+					<span class='{style.style2}'>
+						A Cloud Based SPICE Simulator
+						</span>
+				</g:HTML>
+			</g:Cell>
+
+		</g:HorizontalPanel>
+		<g:Cell horizontalAlignment="ALIGN_CENTER">
+			<g:Grid ui:field="gdToolbar">
+				<g:row>
+					<g:customCell>
+						<g:PushButton text="R" ui:field="btnResistor" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="L" ui:field="btnInductor" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="C" ui:field="btnCapacitor" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="Vdc" ui:field="btnVdc" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="Gnd" ui:field="btnGround" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="Wire" ui:field="btnWire" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="Zoom In" ui:field="btnZoomIn" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="Zoom Out" ui:field="btnZoomOut" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="ShowGrid" ui:field="btnShowGrid" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="Hide Grid" ui:field="btnHideGrid" />
+					</g:customCell>
+					<g:customCell>
+						<g:PushButton text="Rotate" ui:field="btnRotate" />
+					</g:customCell>
+				</g:row>
+			</g:Grid>
+		</g:Cell>
+		<g:SplitLayoutPanel width="100%" height="100%"
+			ui:field="ctCenterArea">
+			<g:west size="300">
+				<p1:CellTable ui:field="ctToolbox" width="100%" />
+			</g:west>
+			<g:center>
+			    <g:ScrollPanel>
+				<g:SimplePanel ui:field="SVGCanvasPanel"></g:SimplePanel>
+				</g:ScrollPanel>
+			</g:center>
+		</g:SplitLayoutPanel>
+	</g:VerticalPanel>
+</ui:UiBinder>
